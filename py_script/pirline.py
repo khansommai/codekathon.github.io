@@ -5,7 +5,7 @@ import datetime
 
 # LINE notify
 url = 'https://notify-api.line.me/api/notify'
-token = 'vsz5C3DmtRC3L8dWQ0Y2TGDRy3HB13DSj4ajwUSNhPF'
+token = 'ใส่รหัส totken ของ line'
 headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'Bearer '+token}
 
 GPIO.setwarnings(False)
