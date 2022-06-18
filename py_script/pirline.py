@@ -11,9 +11,9 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 #ตัวแปรเก็บตำแหน่งพินที่เชื่อมต่อกับ PIR motion sensor
-pir_sensor_pin = 17
+pir_sensor_pin = 23
 #ตัวแปรเก็บตำแหน่งพินที่เชื่อมต่อกับ LED
-led_pin = 21
+led_pin = 2
 #กำหนดให้รับสัญญาณข้อมูลจาก PIR motion sensor ที่ตำแหน่งพินที่กำหนดในตัวแปร pir_sensor_pin
 GPIO.setup(pir_sensor_pin, GPIO.IN)
 #กำหนดให้จ่ายกระแสไฟฟ้าออกไปที่ตำแหน่งพินที่กำหนดในตัวแปร led_pin
