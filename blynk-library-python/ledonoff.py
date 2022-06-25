@@ -5,10 +5,8 @@ import RPi.GPIO as GPIO
 #set GPIO pinout
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-#GPIO 17 or Pin 11
+#GPIO 17 for led
 gpiopin = 17
-#setup pins as input
-GPIO.setup(gpiopin, GPIO.IN)
 
 #cloud server
 BLYNK_TEMPLATE_ID = ''
