@@ -12,10 +12,14 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 #ตัวแปรเก็บตำแหน่งพินที่เชื่อมต่อกับ PIR motion sensor
 pir_sensor_pin = 23
+#ตัวแปรเก็บตำแหน่งพินที่เชื่อต่อกับ BUzzer
+buzzer_pin = 24
 #ตัวแปรเก็บตำแหน่งพินที่เชื่อมต่อกับ LED
 led_pin = 2
 #กำหนดให้รับสัญญาณข้อมูลจาก PIR motion sensor ที่ตำแหน่งพินที่กำหนดในตัวแปร pir_sensor_pin
 GPIO.setup(pir_sensor_pin, GPIO.IN)
+#กำหนดให้จ่ายกระแสไฟฟ้าออกไปที่ตำแหน่งพินที่กำหนดในตัวแปร buzzer_pin
+GPIO.setup(buzzer_pin, GPIO.OUT)
 #กำหนดให้จ่ายกระแสไฟฟ้าออกไปที่ตำแหน่งพินที่กำหนดในตัวแปร led_pin
 GPIO.setup(led_pin, GPIO.OUT)           
 
@@ -30,6 +34,13 @@ while(True):
                         GPIO.output(led_pin, False)
                         time.sleep(0.5)
 
+                #สั่งจ่ายไฟออกให้กับ Buzzer
+                GPIO.output(buzzer_pin, True)
+                #หน่วงเวลา 0.5 วินาที เพื่อสั่งให้ลำโพงดังเป็นเวลา 0.5 วินาที
+                time.sleep(0.5)
+                #สั่งหยุดจ่ายไฟออกให้กับ GPIO24
+                GPIO.output(buzzer_pin, False)
+                
                 #สร้างข้อความวันที่
                 dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
                 msg = 'พบความเคลื่อนไหว: ' + dt
