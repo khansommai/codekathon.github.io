@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(23, GPIO.IN) #เชื่อมต่อ PIR
-GPIO.setup(24, GPIO.OUT) #เชื่อมต่อ BUzzer
+GPIO.setup(23, GPIO.IN) #เชื่อมต่อ PIR แบบรับสัญญาณเข้า
+GPIO.setup(24, GPIO.OUT) #เชื่อมต่อ BUzzer แบบส่งสัญญาณออก
 try:
     time.sleep(2)
     while True:
